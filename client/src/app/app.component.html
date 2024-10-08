@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Products App</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+      </ul>
+      <div>
+        <a class="btn btn-outline-success" routerLink="/cart">Cart</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="row mb-4">
+  <div class="col">
+    <input
+      type="text"
+      placeholder="Search products..."
+      class="form-control"
+      [(ngModel)]="searchQuery"
+    />
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-primary" (click)="searchProducts()">Search</button>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>

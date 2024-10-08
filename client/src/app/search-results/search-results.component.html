@@ -1,0 +1,43 @@
+<div *ngIf="filteredProducts.length === 0">
+    <p>No products found.</p>
+  </div>
+  
+  <div *ngFor="let product of filteredProducts" class="product-card">
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <!-- Product Image -->
+          <img
+            [src]="product.thumbnail"
+            class="img-fluid rounded-start"
+            alt="{{ product.title }}"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <!-- Product Title -->
+            <h5 class="card-title">{{ product.title }}</h5>
+            <!-- Product Price -->
+            <p class="card-text">
+              <strong>Price:</strong> ${{ product.price }}
+            </p>
+            <!-- Product Description -->
+            <p class="card-text">{{ product.description }}</p>
+            <!-- Product Category -->
+            <p class="card-text">
+              <small class="text-muted">Category: {{ product.category }}</small>
+            </p>
+            <!-- Product Stock Information -->
+            <p class="card-text">
+              <small class="text-muted">Stock: {{ product.stock }}</small>
+            </p>
+            <!-- Product Rating -->
+            <p class="card-text">
+              <small class="text-muted">Rating: {{ product.rating }} / 5</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

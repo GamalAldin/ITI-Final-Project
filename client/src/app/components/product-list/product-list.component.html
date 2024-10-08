@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-4" *ngFor="let product of products">
+    <div class="card mb-4">
+      <img
+        [src]="product.thumbnail"
+        class="card-img-top"
+        alt="{{ product.title }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+        <p class="card-text">
+          <strong>Price:</strong> {{ product.price | currency }}
+        </p>
+        <p class="card-text"><strong>Brand:</strong> {{ product.brand }}</p>
+        <p class="card-text">
+          <strong>Rating:</strong> {{ product.rating }} ⭐
+        </p>
+        <p class="card-text"><strong>Stock:</strong> {{ product.stock }}</p>
+        <!-- Corrected routerLink path -->
+        <a [routerLink]="['/products', product._id]" class="btn btn-primary">
+          View Details
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
